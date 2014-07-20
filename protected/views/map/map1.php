@@ -27,13 +27,20 @@ Yii::app()->clientScript->registerScriptFile('https://maps.googleapis.com/maps/a
     var circle = new google.maps.Circle({
         map: map,
         radius: 10000, // รัศมี เมตร
-        strokeColor: '#FF0000',//สีเส้นขอบ
-        strokeOpacity: 0.8,//ความโปร่งแสงเว้นขอบ
-        strokeWeight: 2,//ความหนาเส้นขอบ
-        fillColor: '#FF0000',//สีพื้นที่
-        fillOpacity: 0.25,//ความโปร่งแสงพื้นที่
+        strokeColor: '#FF0000', //สีเส้นขอบ
+        strokeOpacity: 0.8, //ความโปร่งแสงเว้นขอบ
+        strokeWeight: 2, //ความหนาเส้นขอบ
+        fillColor: '#FF0000', //สีพื้นที่
+        fillOpacity: 0.25, //ความโปร่งแสงพื้นที่
     });
     circle.bindTo('center', marker_1, 'position');
+
+    var infowindow = new google.maps.InfoWindow({
+        content: "<div style='width:180px'><h3>คนไข้:นาย ก นามสมมติ อายุ 34 ปี</h3><hr>ป่วย:1 ม.ค.57<br>พบ:2 ม.ค.57</div>"
+    })
+    google.maps.event.addListener(marker_1, 'click', function() {
+        infowindow.open(map, marker_1);
+    });
 
 
 
