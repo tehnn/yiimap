@@ -15,13 +15,15 @@ Yii::app()->clientScript->registerScriptFile('https://maps.googleapis.com/maps/a
     var marker_1 = new google.maps.Marker({
         map: map,
         position: new google.maps.LatLng(16.3234, 100.086521),
-        title: 'บ้านผู้ป่วยรายที่ 1'
+        title: 'บ้านผู้ป่วยรายที่ 1',
+        icon:'images/man.png'
     });
 
     var marker_2 = new google.maps.Marker({
         map: map,
         position: new google.maps.LatLng(16.023145, 100.10123),
-        title: 'บ้านผู้ป่วยรายที่ 2'
+        title: 'บ้านผู้ป่วยรายที่ 2',
+         icon:'images/man.png'
     });
 
     var circle = new google.maps.Circle({
