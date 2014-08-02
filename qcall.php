@@ -36,11 +36,11 @@ if (!file_exists($file)) {
         <div align="center">
             <form method="POST">
                 <input type="text"  name="seq" style="width: 200px">
-                
+
                 <input type="radio" value="1" name="ch">ช่องบริการ 1
                 <input type="radio" value="2" name="ch">ช่องบริการ 2
                 <input type="radio" value="3" name="ch">ช่องบริการ 3
-                
+
                 <input type="submit" value="ประกาศ">
             </form>
             <br>
@@ -50,12 +50,13 @@ if (!file_exists($file)) {
             </div>
             <br>
             <br>
-            <?php if(!empty($_POST[seq]) and !empty($_POST[ch])):?>
-            <audio controls="controls" autoplay="autoplay">
-                <source src="<?php echo $file; ?>" type="audio/mp3" />
-            </audio>
+            <?php if (!empty($_POST[seq]) and !empty($_POST[ch])): ?>
+                <audio controls="controls" autoplay="autoplay">
+                    <source src="<?php echo $file; ?>" type="audio/mp3" />
+                </audio>
             <?php endif; ?>
         </div>
 
-    </body>
+    <center>  UTEHN PHNU </center>
+</body>
 </html>
