@@ -35,18 +35,26 @@ if (!file_exists($file)) {
     <body>
         <div align="center">
             <form method="POST">
-                <input type="text"  name="seq" style="width: 200px">
+                กรอกหมายเลข <input type="text"  name="seq" style="width: 200px"><br><br>
 
                 <input type="radio" value="1" name="ch">ช่องบริการ 1
                 <input type="radio" value="2" name="ch">ช่องบริการ 2
-                <input type="radio" value="3" name="ch">ช่องบริการ 3
+                <input type="radio" value="3" name="ch">ช่องบริการ 3 <br>
 
                 <input type="submit" value="ประกาศ">
             </form>
             <br>
             <div style="border: solid #29d; width: 350px; height: 250px;vertical-align: central">
-                <h1>หมายเลข <?php echo $_POST[seq]; ?> <br><br>
-                    เชิญช่อง <?php echo $_POST[ch]; ?></h1>
+                <?php if (!empty($_POST[seq]) and !empty($_POST[ch])): ?>
+                    <h1>
+                        หมายเลข <?php echo $_POST[seq]; ?> <br><br>
+                        เชิญช่อง <?php echo $_POST[ch]; ?>
+                    </h1>
+                <?php else: ?>
+                    <h1>
+                        กรอกข้อมูลไม่ครบ
+                    </h1>
+                <?php endif; ?>
             </div>
             <br>
             <br>
